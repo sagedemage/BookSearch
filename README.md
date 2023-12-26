@@ -1,4 +1,5 @@
 # BookSearch
+A Book Search Mobile App for searching up books.
 
 ## Mobile App
 
