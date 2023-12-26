@@ -23,15 +23,39 @@ export default function ViewBooks() {
     }, []);
 
     const _renderItem = ({ item }) => (
-        <View>
-            <Text>{item.title}</Text>
-            <Text>{item.publish_date}</Text>
-            <Text>{item.publish_year}</Text>
+        <View style={{ flexDirection: 'row'}}>
+            {/* Only 3 or 4 items a time */}
+            <View style={{width: 100}}>
+                <Text style={{textAlign: 'center'}}>{item.title}</Text>
+            </View>
+            <View style={{width: 100}}>
+                <Text style={{textAlign: 'center'}}>{item.author_name}</Text>
+            </View>
+            <View style={{width: 100}}>
+                <Text style={{textAlign: 'center'}}>{item.language}</Text>
+            </View>
+            <View style={{width: 100}}>
+                <Text style={{textAlign: 'center'}}>{item.publish_year}</Text>
+            </View>
         </View>
     );
 
     return (
-        <View>
+        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', marginTop: '10%'}}>
+            <View style={{ flexDirection: 'row'}}>
+                <View style={{width: 100, backgroundColor: 'black'}}>
+                    <Text style={{textAlign: 'center', color: 'white'}}>Title</Text>
+                </View>
+                <View style={{width: 100, backgroundColor: 'black'}}>
+                    <Text style={{textAlign: 'center', color: 'white'}}>Author Name</Text>
+                </View>
+                <View style={{width: 100, backgroundColor: 'black'}}>
+                    <Text style={{textAlign: 'center', color: 'white'}}>Language</Text>
+                </View>
+                <View style={{width: 100, backgroundColor: 'black'}}>
+                    <Text style={{textAlign: 'center', color: 'white'}}>Publish Year</Text>
+                </View>
+            </View>
             <FlatList
                 data={books}
                 renderItem={_renderItem} 
