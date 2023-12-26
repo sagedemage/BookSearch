@@ -51,10 +51,10 @@ export default function ViewBooks() {
                     <Text style={{textAlign: 'center', color: 'white'}}>Number of Pages Median</Text>
                 </View>
             </View>
-            <FlatList
+            {books.length !== 0 && <FlatList
                 data={books}
                 renderItem={_renderItem} 
-                />               
+                />}
         </View>
     );
 }
