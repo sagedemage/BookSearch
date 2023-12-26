@@ -10,28 +10,47 @@ export default function ViewBooks() {
     useEffect(() => {
         axios.get('http://10.0.2.2:5000/search?q=c+programming+language')
             .then(function(response) {
-                console.log("Response books data -->")
-                console.log(response.data.books)
                 setBooks(response.data.books)
             })
             .catch(function(error) {
                 console.error(error);
             })
-        
-        console.log("Books Object -->");
-        console.log(books);
     }, []);
 
     const _renderItem = ({ item }) => (
-        <View>
-            <Text>{item.title}</Text>
-            <Text>{item.publish_date}</Text>
-            <Text>{item.publish_year}</Text>
+        <View style={{ flexDirection: 'row', borderBottomWidth: 2, borderLeftWidth: 2, borderRightWidth: 2}}>
+            {/* Only 3 or 4 items a time */}
+            <View style={{width: 100, borderRightWidth: 2}}>
+                <Text style={{textAlign: 'center'}}>{item.title}</Text>
+            </View>
+            <View style={{width: 100, borderRightWidth: 2}}>
+                <Text style={{textAlign: 'center'}}>{item.author_name}</Text>
+            </View>
+            <View style={{width: 100, borderRightWidth: 2}}>
+                <Text style={{textAlign: 'center'}}>{item.first_publish_year}</Text>
+            </View>
+            <View style={{width: 100}}>
+                <Text style={{textAlign: 'center'}}>{item.number_of_pages_median}</Text>
+            </View>
         </View>
     );
 
     return (
-        <View>
+        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', marginTop: '10%'}}>
+            <View style={{ flexDirection: 'row', borderBottomWidth: 2, borderLeftWidth: 2, borderRightWidth: 2}}>
+                <View style={{width: 100, backgroundColor: 'black'}}>
+                    <Text style={{textAlign: 'center', color: 'white'}}>Title</Text>
+                </View>
+                <View style={{width: 100, backgroundColor: 'black'}}>
+                    <Text style={{textAlign: 'center', color: 'white'}}>Author Name</Text>
+                </View>
+                <View style={{width: 100, backgroundColor: 'black'}}>
+                    <Text style={{textAlign: 'center', color: 'white'}}>First Publish Year</Text>
+                </View>
+                <View style={{width: 100, backgroundColor: 'black'}}>
+                    <Text style={{textAlign: 'center', color: 'white'}}>Number of Pages Median</Text>
+                </View>
+            </View>
             <FlatList
                 data={books}
                 renderItem={_renderItem} 
