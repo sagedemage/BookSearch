@@ -16,6 +16,10 @@ def hello_world():
     return data
 
 
+def convert_array_to_string(list_of_items):
+    string_list = ",".join(str(x) for x in list_of_items)
+    return string_list
+
 @app.route("/search")
 def book_search():
     # to get the value of query (i.e. ?q=some-value)
@@ -32,32 +36,32 @@ def book_search():
         if 'title' in item:
             book['title'] = item['title']
 
-        if 'publish_date' in item:
-            book['publish_date'] = item['publish_date']
+        if 'number_of_pages_median' in item:
+            book['number_of_pages_median'] = item['number_of_pages_median']
 
-        if 'publish_year' in item:
-            book['publish_year'] = item['publish_year']
+        if 'first_publish_year' in item:
+            book['first_publish_year'] = item['first_publish_year']
 
         if 'isbn' in item:
-            book['isbn'] = item['isbn']
+            book['isbn'] = convert_array_to_string(item['isbn'])
 
         if 'publisher' in item:
-            book['publisher'] = item['publisher']
+            book['publisher'] = convert_array_to_string(item['publisher'])
 
         if 'language' in item:
-            book['language'] = item['language']
+            book['language'] = convert_array_to_string(item['language'])
 
         if 'author_name' in item:
-            book['author_name'] = item['author_name']
+            book['author_name'] = convert_array_to_string(item['author_name'])
 
         if 'subject' in item:
-            book['subject'] = item['subject']
+            book['subject'] = convert_array_to_string(item['subject'])
 
         if 'id_amazon' in item:
-            book['id_amazon'] = item['id_amazon']
+            book['id_amazon'] = convert_array_to_string(item['id_amazon'])
 
         if 'id_google' in item:
-            book['id_google'] = item['id_google']
+            book['id_google'] = convert_array_to_string(item['id_google'])
 
         books.append(book)
 
