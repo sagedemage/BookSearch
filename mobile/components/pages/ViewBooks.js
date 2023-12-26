@@ -10,16 +10,11 @@ export default function ViewBooks() {
     useEffect(() => {
         axios.get('http://10.0.2.2:5000/search?q=c+programming+language')
             .then(function(response) {
-                console.log("Response books data -->")
-                console.log(response.data.books)
                 setBooks(response.data.books)
             })
             .catch(function(error) {
                 console.error(error);
             })
-        
-        console.log("Books Object -->");
-        console.log(books);
     }, []);
 
     const _renderItem = ({ item }) => (
@@ -32,10 +27,10 @@ export default function ViewBooks() {
                 <Text style={{textAlign: 'center'}}>{item.author_name}</Text>
             </View>
             <View style={{width: 100}}>
-                <Text style={{textAlign: 'center'}}>{item.language}</Text>
+                <Text style={{textAlign: 'center'}}>{item.first_publish_year}</Text>
             </View>
             <View style={{width: 100}}>
-                <Text style={{textAlign: 'center'}}>{item.publish_year}</Text>
+                <Text style={{textAlign: 'center'}}>{item.number_of_pages_median}</Text>
             </View>
         </View>
     );
@@ -50,10 +45,10 @@ export default function ViewBooks() {
                     <Text style={{textAlign: 'center', color: 'white'}}>Author Name</Text>
                 </View>
                 <View style={{width: 100, backgroundColor: 'black'}}>
-                    <Text style={{textAlign: 'center', color: 'white'}}>Language</Text>
+                    <Text style={{textAlign: 'center', color: 'white'}}>First Publish Year</Text>
                 </View>
                 <View style={{width: 100, backgroundColor: 'black'}}>
-                    <Text style={{textAlign: 'center', color: 'white'}}>Publish Year</Text>
+                    <Text style={{textAlign: 'center', color: 'white'}}>Number of Pages Median</Text>
                 </View>
             </View>
             <FlatList
