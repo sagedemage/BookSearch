@@ -88,9 +88,6 @@ def book_search_by_subject():
         if 'authors' in item:
             book['author_name'] = item['authors'][0]['name']
 
-        if 'number_of_pages_median' in item:
-            book['number_of_pages_median'] = item['number_of_pages_median']
-
         if 'first_publish_year' in item:
             book['first_publish_year'] = item['first_publish_year']
 
