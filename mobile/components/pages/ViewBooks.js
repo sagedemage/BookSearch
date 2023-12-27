@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { View, FlatList, Text, TextInput, Button, ActivityIndicator} from 'react-native';
+import { styles } from '../../styles';
 
 // Android Emulator localhost: 10.0.2.2:3000
 
-export default function ViewBooks() {
+export default function ViewBooks({navigation}) {
     const [books, setBooks] = useState([]);
     const [text, setText] = useState('');
     const [isLoading, setLoading] = useState(false);
@@ -42,14 +43,21 @@ export default function ViewBooks() {
     );
 
     return (
-        <View style={{marginTop: '10%'}}>
+        <View style={styles.container}>
+            <Button
+                title="View Books by Subject"
+                onPress={() =>
+                    navigation.navigate('Subjects')
+                }
+            />
+            <Text>{"\n"}</Text>
             <Button
                 title='Search'
                 onPress={() => ViewBooks()}
                 ></Button>
             <TextInput
                 style={{height: 40}}
-                placeholder="Type here to translate!"
+                placeholder="Search Book"
                 onChangeText={newText => setText(newText)}
                 defaultValue={text}
             ></TextInput>
@@ -80,3 +88,4 @@ export default function ViewBooks() {
         </View>
     );
 }
+
