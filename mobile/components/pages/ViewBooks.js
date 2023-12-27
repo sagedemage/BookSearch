@@ -2,8 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { View, FlatList, Text, TextInput, Button, ActivityIndicator} from 'react-native';
 import { styles } from '../../styles';
-
-// Android Emulator localhost: 10.0.2.2:3000
+import { SERVER_URL } from '../../config';
 
 export default function ViewBooks({navigation}) {
     const [books, setBooks] = useState([]);
@@ -12,7 +11,7 @@ export default function ViewBooks({navigation}) {
 
     const ViewBooks = () => {
         setLoading(true)
-        axios.get('http://10.0.2.2:5000/search?q=' + text)
+        axios.get(SERVER_URL + '/search?q=' + text)
             .then(function(response) {
                 setBooks(response.data.books)
             })
