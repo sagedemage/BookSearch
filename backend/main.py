@@ -24,7 +24,7 @@ def convert_array_to_string(list_of_items):
 @app.route("/search")
 def book_search():
     # to get the value of query (i.e. ?q=some-value)
-    # https://openlibrary.org/search.json?q=flyte
+    # /search?q=some-value
     query = request.args.get("q")
     response = requests.get("https://openlibrary.org/search.json?q=" + query)
     data = response.json()
@@ -72,7 +72,7 @@ def book_search():
 @app.route("/search_by_subject")
 def book_search_by_subject():
     # to get the value of query (i.e. ?q=some-value)
-    # https://openlibrary.org/search.json?q=flyte
+    # /search_by_subject?q=some-value
     query = request.args.get("q").lower()
     response = requests.get("https://openlibrary.org/subjects/" + query + ".json")
     data = response.json()
