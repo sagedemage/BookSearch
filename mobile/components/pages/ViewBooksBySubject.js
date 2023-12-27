@@ -1,8 +1,9 @@
-import { View, Text, Button} from 'react-native';
+import { View, Text, Button } from 'react-native';
+import { styles } from '../../styles';
 
 export default function ViewBooksBySubject({navigation}) {
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <View style={styles.container}>
             <Button
                 title="View Books"
                 onPress={() =>
@@ -14,4 +15,3 @@ export default function ViewBooksBySubject({navigation}) {
         </View>
   );
 }
-

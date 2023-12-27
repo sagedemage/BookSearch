@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { View, FlatList, Text, TextInput, Button, ActivityIndicator} from 'react-native';
+import { styles } from '../../styles';
 
 // Android Emulator localhost: 10.0.2.2:3000
 
@@ -42,7 +43,7 @@ export default function ViewBooks({navigation}) {
     );
 
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <View style={styles.container}>
             <Button
                 title="View Books by Subject"
                 onPress={() =>
@@ -87,3 +88,4 @@ export default function ViewBooks({navigation}) {
         </View>
     );
 }
+
