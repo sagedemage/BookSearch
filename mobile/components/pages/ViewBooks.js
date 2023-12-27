@@ -10,7 +10,6 @@ export default function ViewBooks() {
     const [isLoading, setLoading] = useState(false);
 
     const ViewBooks = () => {
-        console.log(text)
         setLoading(true)
         axios.get('http://10.0.2.2:5000/search?q=' + text)
             .then(function(response) {
