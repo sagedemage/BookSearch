@@ -94,3 +94,30 @@ def book_search_by_subject():
         books.append(book)
 
     return {"books": books}
+
+
+@app.route("/search_by_author")
+def book_search_by_author():
+    # to get the value of query (i.e. ?q=some-value)
+    # /search_by_author?q=some-value
+    query = request.args.get("q").lower()
+    response = requests.get("https://openlibrary.org/search.json?author=" + query)
+    data = response.json()
+
+    books = []
+
+    for item in data["docs"]:
+        book = {}
+
+        if 'title' in item:
+            book['title'] = item['title']
+
+        if 'first_publish_year' in item:
+            book['first_publish_year'] = item['first_publish_year']
+
+        if 'number_of_pages_median' in item:
+            book['number_of_pages_median'] = item['number_of_pages_median']
+
+        books.append(book)
+
+    return {"books": books}
