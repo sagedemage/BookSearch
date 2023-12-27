@@ -5,14 +5,14 @@ import { styles } from '../../styles';
 
 // Android Emulator localhost: 10.0.2.2:3000
 
-export default function ViewBooksBySubject({navigation}) {
+export default function ViewBooksByAuthor({navigation}) {
     const [books, setBooks] = useState([]);
     const [text, setText] = useState('');
     const [isLoading, setLoading] = useState(false);
 
-    const ViewBooksBySubject = () => {
+    const ViewBooksByAuthor = () => {
         setLoading(true)
-        axios.get('http://10.0.2.2:5000/search_by_subject?q=' + text)
+        axios.get('http://10.0.2.2:5000/search_by_author?q=' + text)
             .then(function(response) {
                 setBooks(response.data.books)
             })
@@ -31,10 +31,10 @@ export default function ViewBooksBySubject({navigation}) {
                 <Text style={{textAlign: 'center'}}>{item.title}</Text>
             </View>
             <View style={{width: 100, borderRightWidth: 2}}>
-                <Text style={{textAlign: 'center'}}>{item.author_name}</Text>
+                <Text style={{textAlign: 'center'}}>{item.first_publish_year}</Text>
             </View>
             <View style={{width: 100, borderRightWidth: 2}}>
-                <Text style={{textAlign: 'center'}}>{item.first_publish_year}</Text>
+                <Text style={{textAlign: 'center'}}>{item.number_of_pages_median}</Text>
             </View>
         </View>
     );
@@ -48,20 +48,20 @@ export default function ViewBooksBySubject({navigation}) {
                 }
             />
             <Button
-                title="View Books by Author"
+                title="View Books by Subject"
                 onPress={() =>
-                    navigation.navigate('Author')
+                    navigation.navigate('Subjects')
                 }
             />
             <Text>{"\n"}</Text>
-            <Text>View Books By Subject</Text>
+            <Text>View Books By Author</Text>
             <Button
                 title='Search'
-                onPress={() => ViewBooksBySubject()}
+                onPress={() => ViewBooksByAuthor()}
                 ></Button>
             <TextInput
                 style={{height: 40}}
-                placeholder="Search Books by Subject"
+                placeholder="Search Books by Author"
                 onChangeText={newText => setText(newText)}
                 defaultValue={text}
             ></TextInput>
@@ -71,10 +71,10 @@ export default function ViewBooksBySubject({navigation}) {
                         <Text style={{textAlign: 'center', color: 'white'}}>Title</Text>
                     </View>
                     <View style={{width: 100, backgroundColor: 'black'}}>
-                        <Text style={{textAlign: 'center', color: 'white'}}>Author Name</Text>
+                        <Text style={{textAlign: 'center', color: 'white'}}>First Publish Year</Text>
                     </View>
                     <View style={{width: 100, backgroundColor: 'black'}}>
-                        <Text style={{textAlign: 'center', color: 'white'}}>First Publish Year</Text>
+                        <Text style={{textAlign: 'center', color: 'white'}}>Number of Pages Median</Text>
                     </View>
                 </View>
                     {isLoading ? (

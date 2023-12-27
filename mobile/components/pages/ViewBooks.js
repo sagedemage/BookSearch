@@ -50,14 +50,21 @@ export default function ViewBooks({navigation}) {
                     navigation.navigate('Subjects')
                 }
             />
+            <Button
+                title="View Books by Author"
+                onPress={() =>
+                    navigation.navigate('Author')
+                }
+            />
             <Text>{"\n"}</Text>
+            <Text>View Books</Text>
             <Button
                 title='Search'
                 onPress={() => ViewBooks()}
                 ></Button>
             <TextInput
                 style={{height: 40}}
-                placeholder="Search Book"
+                placeholder="Search Books"
                 onChangeText={newText => setText(newText)}
                 defaultValue={text}
             ></TextInput>
