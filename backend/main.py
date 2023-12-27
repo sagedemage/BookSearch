@@ -73,7 +73,7 @@ def book_search():
 def book_search_by_subject():
     # to get the value of query (i.e. ?q=some-value)
     # https://openlibrary.org/search.json?q=flyte
-    query = request.args.get("q")
+    query = request.args.get("q").lower()
     response = requests.get("https://openlibrary.org/subjects/" + query + ".json")
     data = response.json()
 
