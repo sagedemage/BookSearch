@@ -5,14 +5,14 @@ import { styles } from '../../styles';
 
 // Android Emulator localhost: 10.0.2.2:3000
 
-export default function ViewBooks({navigation}) {
+export default function ViewBooksByAuthor({navigation}) {
     const [books, setBooks] = useState([]);
     const [text, setText] = useState('');
     const [isLoading, setLoading] = useState(false);
 
-    const ViewBooks = () => {
+    const ViewBooksByAuthor = () => {
         setLoading(true)
-        axios.get('http://10.0.2.2:5000/search?q=' + text)
+        axios.get('http://10.0.2.2:5000/search_by_author?q=' + text)
             .then(function(response) {
                 setBooks(response.data.books)
             })
@@ -31,12 +31,9 @@ export default function ViewBooks({navigation}) {
                 <Text style={{textAlign: 'center'}}>{item.title}</Text>
             </View>
             <View style={{width: 100, borderRightWidth: 2}}>
-                <Text style={{textAlign: 'center'}}>{item.author_name}</Text>
-            </View>
-            <View style={{width: 100, borderRightWidth: 2}}>
                 <Text style={{textAlign: 'center'}}>{item.first_publish_year}</Text>
             </View>
-            <View style={{width: 100}}>
+            <View style={{width: 100, borderRightWidth: 2}}>
                 <Text style={{textAlign: 'center'}}>{item.number_of_pages_median}</Text>
             </View>
         </View>
@@ -45,26 +42,26 @@ export default function ViewBooks({navigation}) {
     return (
         <View style={styles.container}>
             <Button
+                title="View Books"
+                onPress={() =>
+                    navigation.navigate('Books')
+                }
+            />
+            <Button
                 title="View Books by Subject"
                 onPress={() =>
                     navigation.navigate('Subjects')
                 }
             />
-            <Button
-                title="View Books by Author"
-                onPress={() =>
-                    navigation.navigate('Author')
-                }
-            />
             <Text>{"\n"}</Text>
-            <Text>View Books</Text>
+            <Text>View Books By Author</Text>
             <Button
                 title='Search'
-                onPress={() => ViewBooks()}
+                onPress={() => ViewBooksByAuthor()}
                 ></Button>
             <TextInput
                 style={{height: 40}}
-                placeholder="Search Book"
+                placeholder="Search Book by Subject"
                 onChangeText={newText => setText(newText)}
                 defaultValue={text}
             ></TextInput>
@@ -72,9 +69,6 @@ export default function ViewBooks({navigation}) {
                 <View style={{ flexDirection: 'row', borderBottomWidth: 2, borderLeftWidth: 2, borderRightWidth: 2}}>
                     <View style={{width: 100, backgroundColor: 'black'}}>
                         <Text style={{textAlign: 'center', color: 'white'}}>Title</Text>
-                    </View>
-                    <View style={{width: 100, backgroundColor: 'black'}}>
-                        <Text style={{textAlign: 'center', color: 'white'}}>Author Name</Text>
                     </View>
                     <View style={{width: 100, backgroundColor: 'black'}}>
                         <Text style={{textAlign: 'center', color: 'white'}}>First Publish Year</Text>
@@ -93,6 +87,5 @@ export default function ViewBooks({navigation}) {
                     )}
             </View>
         </View>
-    );
+  );
 }
-

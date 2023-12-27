@@ -47,6 +47,12 @@ export default function ViewBooksBySubject({navigation}) {
                     navigation.navigate('Books')
                 }
             />
+            <Button
+                title="View Books by Author"
+                onPress={() =>
+                    navigation.navigate('Author')
+                }
+            />
             <Text>{"\n"}</Text>
             <Text>View Books By Subject</Text>
             <Button
