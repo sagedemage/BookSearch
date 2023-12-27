@@ -42,16 +42,14 @@ export default function ViewBooks({navigation}) {
     );
 
     return (
-        <View style={{marginTop: '10%'}}>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Button
-                title="View Books By Subject"
+                title="View Books by Subject"
                 onPress={() =>
-                    navigation.navigate('ViewBooksBySubject')
+                    navigation.navigate('Subjects')
                 }
             />
-            <Text>
-                {"\n"}
-            </Text>
+            <Text>{"\n"}</Text>
             <Button
                 title='Search'
                 onPress={() => ViewBooks()}
