@@ -40,3 +40,7 @@ yarn-error.*
 # Cache files
 venv
 __pycache__
+
+# Media
+images/*.png
+images/*.xcf
