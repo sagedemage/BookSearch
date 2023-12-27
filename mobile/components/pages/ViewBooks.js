@@ -64,7 +64,7 @@ export default function ViewBooks({navigation}) {
                 ></Button>
             <TextInput
                 style={{height: 40}}
-                placeholder="Search Book"
+                placeholder="Search Books"
                 onChangeText={newText => setText(newText)}
                 defaultValue={text}
             ></TextInput>
