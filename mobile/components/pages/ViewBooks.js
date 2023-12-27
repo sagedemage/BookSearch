@@ -1,21 +1,26 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { View, FlatList, Text, TextInput, Button, Alert } from 'react-native';
+import { View, FlatList, Text, TextInput, Button, ActivityIndicator} from 'react-native';
 
 // Android Emulator localhost: 10.0.2.2:3000
 
 export default function ViewBooks() {
     const [books, setBooks] = useState([]);
     const [text, setText] = useState('');
+    const [isLoading, setLoading] = useState(false);
 
     const ViewBooks = () => {
         console.log(text)
+        setLoading(true)
         axios.get('http://10.0.2.2:5000/search?q=' + text)
             .then(function(response) {
                 setBooks(response.data.books)
             })
             .catch(function(error) {
                 console.error(error);
+            })
+            .finally(function() {
+                setLoading(false)
             })
     }
 
@@ -64,10 +69,14 @@ export default function ViewBooks() {
                         <Text style={{textAlign: 'center', color: 'white'}}>Number of Pages Median</Text>
                     </View>
                 </View>
-                {books.length !== 0 && <FlatList
-                    data={books}
-                    renderItem={_renderItem}
-                />}
+                    {isLoading ? (
+                        <ActivityIndicator />
+                        ) : (
+                            <FlatList
+                                data={books}
+                                renderItem={_renderItem}
+                            />
+                    )}
             </View>
         </View>
     );
