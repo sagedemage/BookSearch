@@ -1,6 +1,8 @@
 # BookSearch
 A Book Search Mobile App for searching up books.
 
+![](./images/book_search_app.webp)
+
 ## Mobile App
 
 To run the program using the following commands
