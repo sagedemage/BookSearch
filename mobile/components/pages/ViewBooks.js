@@ -4,7 +4,7 @@ import { View, FlatList, Text, TextInput, Button, ActivityIndicator} from 'react
 
 // Android Emulator localhost: 10.0.2.2:3000
 
-export default function ViewBooks() {
+export default function ViewBooks({navigation}) {
     const [books, setBooks] = useState([]);
     const [text, setText] = useState('');
     const [isLoading, setLoading] = useState(false);
@@ -44,12 +44,21 @@ export default function ViewBooks() {
     return (
         <View style={{marginTop: '10%'}}>
             <Button
+                title="View Books By Subject"
+                onPress={() =>
+                    navigation.navigate('ViewBooksBySubject')
+                }
+            />
+            <Text>
+                {"\n"}
+            </Text>
+            <Button
                 title='Search'
                 onPress={() => ViewBooks()}
                 ></Button>
             <TextInput
                 style={{height: 40}}
-                placeholder="Type here to translate!"
+                placeholder="Search Book"
                 onChangeText={newText => setText(newText)}
                 defaultValue={text}
             ></TextInput>
