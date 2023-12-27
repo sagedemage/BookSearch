@@ -69,31 +69,4 @@ def book_search():
     return {"books": books}
 
 
-@app.route("/search_by_subject")
-def book_search_by_subject():
-    # to get the value of query (i.e. ?q=some-value)
-    # https://openlibrary.org/search.json?q=flyte
-    query = request.args.get("q")
-    response = requests.get("https://openlibrary.org/subjects/" + query + ".json")
-    data = response.json()
 
-    books = []
-
-    for item in data["works"]:
-        book = {}
-
-        if 'title' in item:
-            book['title'] = item['title']
-
-        if 'authors' in item:
-            book['author_name'] = item['authors'][0]['name']
-
-        if 'number_of_pages_median' in item:
-            book['number_of_pages_median'] = item['number_of_pages_median']
-
-        if 'first_publish_year' in item:
-            book['first_publish_year'] = item['first_publish_year']
-
-        books.append(book)
-
-    return {"books": books}
