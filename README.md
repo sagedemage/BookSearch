@@ -1,5 +1,5 @@
 # BookSearch
-A Book Search Mobile App for searching up books.
+A book search mobile app for searching up books.
 
 ![](./images/book_search_app.webp)
 
