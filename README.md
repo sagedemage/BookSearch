@@ -67,6 +67,7 @@ export const SERVER_URL = "http://" + SERVER_IP_ADDRESS_FROM_EXPO_APP + ":" + PO
 ```
 
 ## Resources
-- https://reactnative.dev/docs/running-on-device
-- https://flask.palletsprojects.com/en/3.0.x/installation/
+- [React Native - Running On Device](https://reactnative.dev/docs/running-on-device)
+- [Flask - Installation](https://flask.palletsprojects.com/en/3.0.x/installation/)
+- [Open Library - Developer Center / APIs](https://openlibrary.org/developers/api)
 
