@@ -40,8 +40,8 @@ Run the flask app after actviating the virtual environment
 flask --app main run
 ```
 
-## Connect to the Server on Android
-[Connect to the Server on Android](./docs/connect_to_the_server_on_android.md)
+## Connect to the Server
+[Connect to the Server](./docs/connect_to_the_server.md)
 
 ## Resources
 - [React Native - Running On Device](https://reactnative.dev/docs/running-on-device)
