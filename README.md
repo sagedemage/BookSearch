@@ -39,7 +39,7 @@ Run the flask app after actviating the virtual environment
 ```
 flask --app main run
 ```
-## Connect to the Server
+## Connect to the Server (Android)
 
 This explains how to get the Expo app on the **Android phone** to connect to the server on the **development machine**.
 
