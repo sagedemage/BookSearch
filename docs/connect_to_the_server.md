@@ -2,7 +2,7 @@
 
 This explains how to get the Expo app on the **mobile device** to connect to the server on the **development machine**.
 
-## Method 1
+## Method 1 (Recommended)
 
 This method will allow the Expo app to connect to the server **wirelessly**.
 
