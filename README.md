@@ -1,5 +1,5 @@
 # BookSearch
-A Book Search Mobile App for searching up books.
+A book search mobile app for searching up books.
 
 ![](./images/book_search_app.webp)
 
@@ -39,4 +39,15 @@ Run the flask app after actviating the virtual environment
 ```
 flask --app main run
 ```
+
+## Connect to the Server
+[Connect to the Server](./docs/connect_to_the_server.md)
+
+## Resources
+- React Native
+    - [Running On Device](https://reactnative.dev/docs/running-on-device)
+    - [Navigating Between Screens](https://reactnative.dev/docs/navigation)
+    - [Networking](https://reactnative.dev/docs/network)
+- [Flask - Installation](https://flask.palletsprojects.com/en/3.0.x/installation/)
+- [Open Library - Developer Center / APIs](https://openlibrary.org/developers/api)
 
