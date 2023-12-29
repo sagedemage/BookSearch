@@ -31,8 +31,8 @@ export default function App() {
                     },
                     tabBarActiveTintColor: 'dodgerblue',
                     tabBarInactiveTintColor: 'lightgray',
-                    tabBarActiveBackgroundColor: '#455C7C',
-                    tabBarInactiveBackgroundColor: '#455C7C'
+                    tabBarActiveBackgroundColor: '#34455D',
+                    tabBarInactiveBackgroundColor: '#34455D'
                 })}
             >
                 <Tab.Screen name="Books" component={ViewBooks} />
