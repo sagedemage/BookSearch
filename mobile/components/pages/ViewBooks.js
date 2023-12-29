@@ -44,20 +44,6 @@ export default function ViewBooks({navigation}) {
     return (
         <View style={styles.container}>
             <Button
-                title="View Books by Subject"
-                onPress={() =>
-                    navigation.navigate('Subjects')
-                }
-            />
-            <Button
-                title="View Books by Author"
-                onPress={() =>
-                    navigation.navigate('Author')
-                }
-            />
-            <Text>{"\n"}</Text>
-            <Text>View Books</Text>
-            <Button
                 title='Search'
                 onPress={() => ViewBooks()}
                 ></Button>
