@@ -3,7 +3,7 @@ import ViewBooksBySubject from './components/pages/ViewBooksBySubject';
 import ViewBooksByAuthor from './components/pages/ViewBooksByAuthor';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const Tab = createBottomTabNavigator();
 
@@ -17,19 +17,17 @@ export default function App() {
                         let iconName;
 
                         if (route.name === "Books") {
-                            iconName = focused
-                                ? 'ios-book'
-                                : 'ios-book-outline';
+                            iconName = focused ? 'book' : 'book';
                         }
                         else if (route.name === "Subject") {
-                            iconName = focused ? 'ios-albums' : 'ios-albums-outline';
+                            iconName = focused ? 'bookmark' : 'bookmark';
                         }
                         else if (route.name === "Author") {
                             // user
-                            iconName = focused ? 'ios-person' : 'ios-person-outline';
+                            iconName = focused ? 'account' : 'account';
                         }
 
-                        return <Ionicons name={iconName} size={size} color={color} />;
+                        return <Icon name={iconName} size={size} color={color} />;
                     },
                     tabBarActiveTintColor: 'dodgerblue',
                     tabBarInactiveTintColor: 'lightgray',
