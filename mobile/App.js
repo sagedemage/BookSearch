@@ -1,6 +1,6 @@
-import ViewBooks from './components/pages/ViewBooks';
-import ViewBooksBySubject from './components/pages/ViewBooksBySubject';
-import ViewBooksByAuthor from './components/pages/ViewBooksByAuthor';
+import ViewBooks from './components/screens/ViewBooks';
+import ViewBooksBySubject from './components/screens/ViewBooksBySubject';
+import ViewBooksByAuthor from './components/screens/ViewBooksByAuthor';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -32,7 +32,9 @@ export default function App() {
                     tabBarActiveTintColor: 'dodgerblue',
                     tabBarInactiveTintColor: 'lightgray',
                     tabBarActiveBackgroundColor: '#34455D',
-                    tabBarInactiveBackgroundColor: '#34455D'
+                    tabBarInactiveBackgroundColor: '#34455D',
+                    headerTintColor: 'white',
+                    headerStyle: { backgroundColor: '#34455D'},
                 })}
             >
                 <Tab.Screen name="Books" component={ViewBooks} />

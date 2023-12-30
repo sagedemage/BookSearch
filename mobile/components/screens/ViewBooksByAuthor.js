@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { View, FlatList, Text, TextInput, Button, ActivityIndicator} from 'react-native';
-import { styles } from '../../styles';
+import { styles, table_header, table_cell } from '../../styles';
 import { SERVER_URL } from '../../config';
 
-export default function ViewBooksByAuthor({navigation}) {
+export default function ViewBooksByAuthor() {
     const [books, setBooks] = useState([]);
     const [text, setText] = useState('');
     const [isLoading, setLoading] = useState(false);
@@ -24,15 +24,15 @@ export default function ViewBooksByAuthor({navigation}) {
     }
 
     const _renderItem = ({ item }) => (
-        <View style={{ flexDirection: 'row', borderBottomWidth: 2, borderLeftWidth: 2, borderRightWidth: 2}}>
+        <View style={styles.row}>
             {/* Only 3 or 4 items a time */}
-            <View style={{width: 100, borderRightWidth: 2}}>
+            <View style={table_cell(120, 2)}>
                 <Text style={{textAlign: 'center'}}>{item.title}</Text>
             </View>
-            <View style={{width: 100, borderRightWidth: 2}}>
+            <View style={table_cell(120, 2)}>
                 <Text style={{textAlign: 'center'}}>{item.first_publish_year}</Text>
             </View>
-            <View style={{width: 100, borderRightWidth: 2}}>
+            <View style={table_cell(120, 0)}>
                 <Text style={{textAlign: 'center'}}>{item.number_of_pages_median}</Text>
             </View>
         </View>
@@ -40,37 +40,36 @@ export default function ViewBooksByAuthor({navigation}) {
 
     return (
         <View style={styles.container}>
-            <Button
-                title='Search'
-                onPress={() => ViewBooksByAuthor()}
-                ></Button>
-            <TextInput
-                style={{height: 40}}
-                placeholder="Search Books by Author"
-                onChangeText={newText => setText(newText)}
-                defaultValue={text}
-            ></TextInput>
-            <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', marginTop: '5%'}}>
-                <View style={{ flexDirection: 'row', borderBottomWidth: 2, borderLeftWidth: 2, borderRightWidth: 2}}>
-                    <View style={{width: 100, backgroundColor: 'black'}}>
+            <View style={styles.search_box}>
+                <Button title='Search' onPress={() => ViewBooksByAuthor()}></Button>
+                <TextInput
+                    style={styles.text_input}
+                    placeholder="Search Books by Author"
+                    onChangeText={newText => setText(newText)}
+                    defaultValue={text}
+                ></TextInput>
+            </View>
+            <View style={styles.table}>
+                <View style={styles.row}>
+                    <View style={table_header(120)}>
                         <Text style={{textAlign: 'center', color: 'white'}}>Title</Text>
                     </View>
-                    <View style={{width: 100, backgroundColor: 'black'}}>
+                    <View style={table_header(120)}>
                         <Text style={{textAlign: 'center', color: 'white'}}>First Publish Year</Text>
                     </View>
-                    <View style={{width: 100, backgroundColor: 'black'}}>
+                    <View style={table_header(120)}>
                         <Text style={{textAlign: 'center', color: 'white'}}>Number of Pages Median</Text>
                     </View>
                 </View>
-                    {isLoading ? (
-                        <ActivityIndicator />
-                        ) : (
-                            <FlatList
-                                data={books}
-                                renderItem={_renderItem}
-                            />
-                    )}
+                {isLoading ? (
+                    <ActivityIndicator />
+                ) : (
+                    <FlatList
+                        data={books}
+                        renderItem={_renderItem}
+                    />
+                )}
             </View>
         </View>
-  );
+    );
 }
