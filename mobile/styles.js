@@ -17,5 +17,11 @@ export const styles = StyleSheet.create({
         marginTop: 10,
         flexDirection: 'row',
         flexWrap: 'wrap'
+    },
+    row: {
+        flexDirection: 'row',
+        borderBottomWidth: 2,
+        borderLeftWidth: 2,
+        borderRightWidth: 2
     }
 });
