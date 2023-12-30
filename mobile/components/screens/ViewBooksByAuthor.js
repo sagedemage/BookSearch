@@ -32,7 +32,7 @@ export default function ViewBooksByAuthor({navigation}) {
             <View style={{width: 120, padding: 5,  borderRightWidth: 2}}>
                 <Text style={{textAlign: 'center'}}>{item.first_publish_year}</Text>
             </View>
-            <View style={{width: 120, padding: 5, borderRightWidth: 2}}>
+            <View style={{width: 120, padding: 5 }}>
                 <Text style={{textAlign: 'center'}}>{item.number_of_pages_median}</Text>
             </View>
         </View>

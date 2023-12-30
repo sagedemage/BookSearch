@@ -32,7 +32,7 @@ export default function ViewBooksBySubject({navigation}) {
             <View style={{width: 120, padding: 5, borderRightWidth: 2}}>
                 <Text style={{textAlign: 'center'}}>{item.author_name}</Text>
             </View>
-            <View style={{width: 120, padding: 5, borderRightWidth: 2}}>
+            <View style={{width: 120, padding: 5 }}>
                 <Text style={{textAlign: 'center'}}>{item.first_publish_year}</Text>
             </View>
         </View>
