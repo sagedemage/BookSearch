@@ -4,7 +4,7 @@ import { View, FlatList, Text, TextInput, Button, ActivityIndicator} from 'react
 import { styles } from '../../styles';
 import { SERVER_URL } from '../../config';
 
-export default function ViewBooksByAuthor({navigation}) {
+export default function ViewBooksByAuthor() {
     const [books, setBooks] = useState([]);
     const [text, setText] = useState('');
     const [isLoading, setLoading] = useState(false);
