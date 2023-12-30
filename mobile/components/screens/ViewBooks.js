@@ -55,7 +55,7 @@ export default function ViewBooks() {
                     defaultValue={text}
                 ></TextInput>
             </View>
-            <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', marginTop: '5%'}}>
+            <View style={styles.table}>
                 <View style={styles.row}>
                     <View style={table_header(95)}>
                         <Text style={{textAlign: 'center', color: 'white'}}>Title</Text>

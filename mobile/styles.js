@@ -23,6 +23,12 @@ export const styles = StyleSheet.create({
         borderBottomWidth: 2,
         borderLeftWidth: 2,
         borderRightWidth: 2
+    },
+    table: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: '5%'
     }
 });
 
