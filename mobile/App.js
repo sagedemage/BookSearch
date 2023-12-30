@@ -37,18 +37,9 @@ export default function App() {
                     headerStyle: { backgroundColor: '#34455D'},
                 })}
             >
-                <Tab.Screen
-                    name="Books"
-                    component={ViewBooks}
-                    />
-                <Tab.Screen
-                    name="Subject"
-                    component={ViewBooksBySubject}
-                    />
-                <Tab.Screen
-                    name="Author"
-                    component={ViewBooksByAuthor}
-                    />
+                <Tab.Screen name="Books" component={ViewBooks} />
+                <Tab.Screen name="Subject" component={ViewBooksBySubject} />
+                <Tab.Screen name="Author" component={ViewBooksByAuthor} />
             </Tab.Navigator>
         </NavigationContainer>
   );
