@@ -32,12 +32,23 @@ export default function App() {
                     tabBarActiveTintColor: 'dodgerblue',
                     tabBarInactiveTintColor: 'lightgray',
                     tabBarActiveBackgroundColor: '#34455D',
-                    tabBarInactiveBackgroundColor: '#34455D'
+                    tabBarInactiveBackgroundColor: '#34455D',
+                    headerTintColor: 'white',
+                    headerStyle: { backgroundColor: '#34455D'},
                 })}
             >
-                <Tab.Screen name="Books" component={ViewBooks} />
-                <Tab.Screen name="Subject" component={ViewBooksBySubject} />
-                <Tab.Screen name="Author" component={ViewBooksByAuthor} />
+                <Tab.Screen
+                    name="Books"
+                    component={ViewBooks}
+                    />
+                <Tab.Screen
+                    name="Subject"
+                    component={ViewBooksBySubject}
+                    />
+                <Tab.Screen
+                    name="Author"
+                    component={ViewBooksByAuthor}
+                    />
             </Tab.Navigator>
         </NavigationContainer>
   );
