@@ -44,10 +44,7 @@ export default function ViewBooks() {
     return (
         <View style={styles.container}>
             <View style={styles.search_box}>
-                <Button
-                    title='Search'
-                    onPress={() => ViewBooks()}
-                ></Button>
+                <Button title='Search' onPress={() => ViewBooks()}></Button>
                 <TextInput
                     style={styles.text_input}
                     placeholder="Search Books"

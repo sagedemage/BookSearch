@@ -41,10 +41,7 @@ export default function ViewBooksByAuthor() {
     return (
         <View style={styles.container}>
             <View style={styles.search_box}>
-                <Button
-                    title='Search'
-                    onPress={() => ViewBooksByAuthor()}
-                ></Button>
+                <Button title='Search' onPress={() => ViewBooksByAuthor()}></Button>
                 <TextInput
                     style={styles.text_input}
                     placeholder="Search Books by Author"
