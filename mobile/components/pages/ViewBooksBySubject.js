@@ -40,16 +40,18 @@ export default function ViewBooksBySubject({navigation}) {
 
     return (
         <View style={styles.container}>
-            <Button
-                title='Search'
-                onPress={() => ViewBooksBySubject()}
+            <View style={styles.search_box}>
+                <Button
+                    title='Search'
+                    onPress={() => ViewBooksBySubject()}
                 ></Button>
-            <TextInput
-                style={{height: 40}}
-                placeholder="Search Books by Subject"
-                onChangeText={newText => setText(newText)}
-                defaultValue={text}
-            ></TextInput>
+                <TextInput
+                    style={styles.text_input}
+                    placeholder="Search Books by Subject"
+                    onChangeText={newText => setText(newText)}
+                    defaultValue={text}
+                ></TextInput>
+            </View>
             <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', marginTop: '5%'}}>
                 <View style={{ flexDirection: 'row', borderBottomWidth: 2, borderLeftWidth: 2, borderRightWidth: 2}}>
                     <View style={{width: 100, backgroundColor: 'black'}}>
@@ -62,15 +64,15 @@ export default function ViewBooksBySubject({navigation}) {
                         <Text style={{textAlign: 'center', color: 'white'}}>First Publish Year</Text>
                     </View>
                 </View>
-                    {isLoading ? (
-                        <ActivityIndicator />
-                        ) : (
-                            <FlatList
-                                data={books}
-                                renderItem={_renderItem}
-                            />
-                    )}
+                {isLoading ? (
+                    <ActivityIndicator />
+                ) : (
+                    <FlatList
+                        data={books}
+                        renderItem={_renderItem}
+                    />
+                )}
             </View>
         </View>
-  );
+    );
 }

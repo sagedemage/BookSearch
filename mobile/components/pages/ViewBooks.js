@@ -43,16 +43,18 @@ export default function ViewBooks({navigation}) {
 
     return (
         <View style={styles.container}>
-            <Button
-                title='Search'
-                onPress={() => ViewBooks()}
+            <View style={styles.search_box}>
+                <Button
+                    title='Search'
+                    onPress={() => ViewBooks()}
                 ></Button>
-            <TextInput
-                style={{height: 40}}
-                placeholder="Search Books"
-                onChangeText={newText => setText(newText)}
-                defaultValue={text}
-            ></TextInput>
+                <TextInput
+                    style={styles.text_input}
+                    placeholder="Search Books"
+                    onChangeText={newText => setText(newText)}
+                    defaultValue={text}
+                ></TextInput>
+            </View>
             <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', marginTop: '5%'}}>
                 <View style={{ flexDirection: 'row', borderBottomWidth: 2, borderLeftWidth: 2, borderRightWidth: 2}}>
                     <View style={{width: 100, backgroundColor: 'black'}}>
@@ -68,14 +70,14 @@ export default function ViewBooks({navigation}) {
                         <Text style={{textAlign: 'center', color: 'white'}}>Number of Pages Median</Text>
                     </View>
                 </View>
-                    {isLoading ? (
-                        <ActivityIndicator />
-                        ) : (
-                            <FlatList
-                                data={books}
-                                renderItem={_renderItem}
-                            />
-                    )}
+                {isLoading ? (
+                    <ActivityIndicator />
+                ) : (
+                    <FlatList
+                        data={books}
+                        renderItem={_renderItem}
+                    />
+                )}
             </View>
         </View>
     );

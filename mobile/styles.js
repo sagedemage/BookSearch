@@ -7,4 +7,15 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+    text_input: {
+        height: 35,
+        width: 200,
+        borderWidth: 2,
+        paddingHorizontal: 10
+    },
+    search_box: {
+        marginTop: 10,
+        flexDirection: 'row',
+        flexWrap: 'wrap'
+    }
 });
