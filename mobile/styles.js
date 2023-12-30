@@ -33,3 +33,11 @@ export const table_header = function(width) {
         backgroundColor: 'black'
     }
 }
+
+export const table_cell = function(width, border_right_width) {
+    return {
+        width: width,
+        padding: 5,
+        borderRightWidth: border_right_width
+    }
+}
