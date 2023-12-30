@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { View, FlatList, Text, TextInput, Button, ActivityIndicator} from 'react-native';
-import { styles } from '../../styles';
+import { styles, table_header } from '../../styles';
 import { SERVER_URL } from '../../config';
 
 export default function ViewBooks() {
@@ -57,16 +57,16 @@ export default function ViewBooks() {
             </View>
             <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', marginTop: '5%'}}>
                 <View style={styles.row}>
-                    <View style={{width: 95, padding: 5, backgroundColor: 'black'}}>
+                    <View style={table_header(95)}>
                         <Text style={{textAlign: 'center', color: 'white'}}>Title</Text>
                     </View>
-                    <View style={{width: 95, padding: 5, backgroundColor: 'black'}}>
+                    <View style={table_header(95)}>
                         <Text style={{textAlign: 'center', color: 'white'}}>Author Name</Text>
                     </View>
-                    <View style={{width: 95, padding: 5, backgroundColor: 'black'}}>
+                    <View style={table_header(95)}>
                         <Text style={{textAlign: 'center', color: 'white'}}>First Publish Year</Text>
                     </View>
-                    <View style={{width: 95, padding: 5, backgroundColor: 'black'}}>
+                    <View style={table_header(95)}>
                         <Text style={{textAlign: 'center', color: 'white'}}>Number of Pages Median</Text>
                     </View>
                 </View>

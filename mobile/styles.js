@@ -25,3 +25,11 @@ export const styles = StyleSheet.create({
         borderRightWidth: 2
     }
 });
+
+export const table_header = function(width) {
+    return {
+        width: width,
+        padding: 5,
+        backgroundColor: 'black'
+    }
+}
