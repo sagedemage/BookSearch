@@ -19,7 +19,7 @@ const esModules = [
 const config = {
   preset: 'jest-expo',
   transformIgnorePatterns: [`/node_modules/(?!${esModules})`],
-  "transform": {
+  transform: {
     "^.+\\.js$": "babel-jest"
   },
   // All imported modules in your tests should be mocked automatically
