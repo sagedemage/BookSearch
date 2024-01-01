@@ -18,7 +18,7 @@ module.exports = {
     ],
     "settings": {
         "react": {
-          "version": "detect"
+            "version": "detect"
         }
     },
     "rules": {
@@ -39,13 +39,13 @@ module.exports = {
         "prefer-const": "error",
         "no-var": "error",
         "no-lone-blocks": "error",
-		"no-eq-null": "error",
-		"new-cap": "error",
-		"dot-notation": "error",
-		"block-scoped-var": "error",
-		"no-await-in-loop": "error",
-		"no-constructor-return": "error",
-		"no-duplicate-imports": "error",
+        "no-eq-null": "error",
+        "new-cap": "error",
+        "dot-notation": "error",
+        "block-scoped-var": "error",
+        "no-await-in-loop": "error",
+        "no-constructor-return": "error",
+        "no-duplicate-imports": "error",
         'react/react-in-jsx-scope': 'off'
     }
 }
