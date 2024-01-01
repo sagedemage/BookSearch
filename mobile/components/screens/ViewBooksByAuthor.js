@@ -9,7 +9,7 @@ export default function ViewBooksByAuthor() {
     const [text, setText] = useState('');
     const [isLoading, setLoading] = useState(false);
 
-    const ViewBooksByAuthor = () => {
+    const viewBooksByAuthor = () => {
         setLoading(true)
         axios.get(SERVER_URL + '/search_by_author?q=' + text)
             .then(function(response) {
@@ -41,7 +41,7 @@ export default function ViewBooksByAuthor() {
     return (
         <View style={styles.container}>
             <View style={styles.search_box}>
-                <Button title='Search' onPress={() => ViewBooksByAuthor()}></Button>
+                <Button title='Search' onPress={() => viewBooksByAuthor()}></Button>
                 <TextInput
                     style={styles.text_input}
                     placeholder="Search Books by Author"

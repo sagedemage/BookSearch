@@ -9,7 +9,7 @@ export default function ViewBooksBySubject() {
     const [text, setText] = useState('');
     const [isLoading, setLoading] = useState(false);
 
-    const ViewBooksBySubject = () => {
+    const viewBooksBySubject = () => {
         setLoading(true)
         axios.get(SERVER_URL + '/search_by_subject?q=' + text)
             .then(function(response) {
@@ -41,7 +41,7 @@ export default function ViewBooksBySubject() {
     return (
         <View style={styles.container}>
             <View style={styles.search_box}>
-                <Button title='Search' onPress={() => ViewBooksBySubject()}></Button>
+                <Button title='Search' onPress={() => viewBooksBySubject()}></Button>
                 <TextInput
                     style={styles.text_input}
                     placeholder="Search Books by Subject"
