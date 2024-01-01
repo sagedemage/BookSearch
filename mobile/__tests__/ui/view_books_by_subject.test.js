@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { screen, render, cleanup } from '@testing-library/react-native';
-import ViewBooksBySubject from '../components/screens/ViewBooksBySubject';
+import ViewBooksBySubject from '../../components/screens/ViewBooksBySubject';
 
 test('text input', () => {
     render(

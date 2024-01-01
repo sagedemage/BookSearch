@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { screen, render, fireEvent, cleanup } from '@testing-library/react-native';
-import App from '../App';
+import App from '../../App';
 
 test('subject tab navigation', () => {
     render(
