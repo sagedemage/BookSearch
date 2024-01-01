@@ -16,13 +16,13 @@ export default function App() {
                     tabBarIcon: ({ focused, color, size }) => {
                         let iconName;
 
-                        if (route.name === "Books") {
+                        if (route.name === 'Books') {
                             iconName = focused ? 'book' : 'book';
                         }
-                        else if (route.name === "Subject") {
+                        else if (route.name === 'Subject') {
                             iconName = focused ? 'bookmark' : 'bookmark';
                         }
-                        else if (route.name === "Author") {
+                        else if (route.name === 'Author') {
                             // user
                             iconName = focused ? 'account' : 'account';
                         }
