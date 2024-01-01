@@ -2,8 +2,8 @@ import * as React from 'react';
 import { screen, render, cleanup } from '@testing-library/react-native';
 import ViewBooksByAuthor from '../../components/screens/ViewBooksByAuthor';
 
-test('text input UI element', () => {
-    /* Text Input UI element for ViewBooksByAuthor.js */
+test('text input UI element for view books by author component', () => {
+    /* Text Input UI element for ViewBooksByAuthor.js component */
     render(
         <ViewBooksByAuthor />
     );

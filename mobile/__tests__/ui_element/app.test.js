@@ -2,8 +2,8 @@ import * as React from 'react';
 import { screen, render, fireEvent, cleanup } from '@testing-library/react-native';
 import App from '../../App';
 
-test('subject navigation tab UI element', () => {
-    /* Subject Navigation Tab UI element for App.js */
+test('subject navigation tab UI element for app component', () => {
+    /* Subject Navigation Tab UI element for App.js component */
     render(
         <App />
     );
@@ -16,8 +16,8 @@ test('subject navigation tab UI element', () => {
     cleanup();
 })
 
-test('subject header UI element', () => {
-    /* Subject Header UI element for App.js */
+test('subject header UI element for app component', () => {
+    /* Subject Header UI element for App.js component */
     render(
         <App />
     );
