@@ -3,7 +3,7 @@ import { screen, render, cleanup } from '@testing-library/react-native';
 import ViewBooksByAuthor from '../../components/screens/ViewBooksByAuthor';
 
 test('text input UI', () => {
-    /* Text Input UI */
+    /* Text Input UI for ViewBooksByAuthor.js */
     render(
         <ViewBooksByAuthor />
     );

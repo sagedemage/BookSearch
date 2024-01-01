@@ -3,7 +3,7 @@ import { screen, render, fireEvent, cleanup } from '@testing-library/react-nativ
 import App from '../../App';
 
 test('subject navigation tab UI', () => {
-    /* Subject Navigation Tab  UI */
+    /* Subject Navigation Tab UI for App.js */
     render(
         <App />
     );
@@ -17,7 +17,7 @@ test('subject navigation tab UI', () => {
 })
 
 test('subject header UI', () => {
-    /* Subject Header UI */
+    /* Subject Header UI for App.js */
     render(
         <App />
     );
