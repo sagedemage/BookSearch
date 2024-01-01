@@ -2,12 +2,12 @@ import * as React from 'react';
 import { screen, render, fireEvent, cleanup } from '@testing-library/react-native';
 import App from '../../App';
 
-test('subject tab navigation', () => {
+test('subject navigation tab UI', () => {
+    /* Subject Navigation Tab  UI */
     render(
         <App />
     );
 
-    /* Subject Navigation Tab */
     let element = screen.getByLabelText("Subject, tab, 2 of 3")
 
     expect(element.props.accessibilityLabel).toContain('Subject, tab, 2 of 3');
@@ -16,14 +16,14 @@ test('subject tab navigation', () => {
     cleanup();
 })
 
-test('subject header', () => {
+test('subject header UI', () => {
+    /* Subject Header UI */
     render(
         <App />
     );
 
     fireEvent.press(screen.getByLabelText('Subject, tab, 2 of 3'));
 
-    /* Subject Header */
     let element = screen.getByRole('header', {name: 'Subject'})
 
     expect(element.props.children).toContain('Subject');

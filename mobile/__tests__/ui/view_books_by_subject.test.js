@@ -2,12 +2,12 @@ import * as React from 'react';
 import { screen, render, cleanup } from '@testing-library/react-native';
 import ViewBooksBySubject from '../../components/screens/ViewBooksBySubject';
 
-test('text input', () => {
+test('text input UI', () => {
+    /* Text Input UI */
     render(
         <ViewBooksBySubject />
     );
 
-    /* Text Input */
     element = screen.getByPlaceholderText('Search Books by Subject');
 
     expect(element.props.placeholder).toContain("Search Books by Subject");
