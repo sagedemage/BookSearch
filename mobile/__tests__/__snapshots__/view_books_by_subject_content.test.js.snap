@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`check the view books by subject screen content matches with the snapshot 1`] = `
+exports[`view books by subject content matches the snapshot 1`] = `
 <View
   style={
     {
