@@ -4,8 +4,8 @@ import renderer from 'react-test-renderer';
 
 jest.useFakeTimers()
 
-test('app content matches the snapshot', () => {
-  /* Content for App.js matches the snapshot */
+test('app UI component matches the snapshot', () => {
+  /* App.js UI component matches the snapshot */
   const tree = renderer
     .create(<App />)
     .toJSON();

@@ -1,16 +1,16 @@
 import * as React from 'react';
 import { screen, render, cleanup } from '@testing-library/react-native';
-import ViewBooks from '../../components/screens/ViewBooks';
+import ViewBooksByAuthor from '../../components/screens/ViewBooksByAuthor';
 
-test('text input UI', () => {
-    /* Text Input UI for ViewBooks.js */
+test('text input UI element', () => {
+    /* Text Input UI element for ViewBooksByAuthor.js */
     render(
-        <ViewBooks />
+        <ViewBooksByAuthor />
     );
 
-    element = screen.getByPlaceholderText('Search Books');
+    element = screen.getByPlaceholderText('Search Books by Author');
 
-    expect(element.props.placeholder).toContain("Search Books");
+    expect(element.props.placeholder).toContain("Search Books by Author");
     expect(element.props.defaultValue).toContain("");
     expect(element.props.style.borderWidth).toBe(2);
     expect(element.props.style.height).toBe(35);

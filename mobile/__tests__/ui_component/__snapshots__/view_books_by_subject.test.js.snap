@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`view books by author content matches the snapshot 1`] = `
+exports[`view books by subject UI component matches the snapshot 1`] = `
 <View
   style={
     {
@@ -81,7 +81,7 @@ exports[`view books by author content matches the snapshot 1`] = `
     <TextInput
       defaultValue=""
       onChangeText={[Function]}
-      placeholder="Search Books by Author"
+      placeholder="Search Books by Subject"
       style={
         {
           "borderWidth": 2,
@@ -149,7 +149,7 @@ exports[`view books by author content matches the snapshot 1`] = `
             }
           }
         >
-          First Publish Year
+          Author Name
         </Text>
       </View>
       <View
@@ -169,7 +169,7 @@ exports[`view books by author content matches the snapshot 1`] = `
             }
           }
         >
-          Number of Pages Median
+          First Publish Year
         </Text>
       </View>
     </View>

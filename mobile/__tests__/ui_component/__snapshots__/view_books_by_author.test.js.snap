@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`view books content matches the snapshot 1`] = `
+exports[`view books by author UI component matches the snapshot 1`] = `
 <View
   style={
     {
@@ -81,7 +81,7 @@ exports[`view books content matches the snapshot 1`] = `
     <TextInput
       defaultValue=""
       onChangeText={[Function]}
-      placeholder="Search Books"
+      placeholder="Search Books by Author"
       style={
         {
           "borderWidth": 2,
@@ -117,7 +117,7 @@ exports[`view books content matches the snapshot 1`] = `
           {
             "backgroundColor": "black",
             "padding": 5,
-            "width": 95,
+            "width": 120,
           }
         }
       >
@@ -137,27 +137,7 @@ exports[`view books content matches the snapshot 1`] = `
           {
             "backgroundColor": "black",
             "padding": 5,
-            "width": 95,
-          }
-        }
-      >
-        <Text
-          style={
-            {
-              "color": "white",
-              "textAlign": "center",
-            }
-          }
-        >
-          Author Name
-        </Text>
-      </View>
-      <View
-        style={
-          {
-            "backgroundColor": "black",
-            "padding": 5,
-            "width": 95,
+            "width": 120,
           }
         }
       >
@@ -177,7 +157,7 @@ exports[`view books content matches the snapshot 1`] = `
           {
             "backgroundColor": "black",
             "padding": 5,
-            "width": 95,
+            "width": 120,
           }
         }
       >
