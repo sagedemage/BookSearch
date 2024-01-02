@@ -1,3 +1,5 @@
+"""Book APIs"""
+
 from flask import Blueprint, request
 import requests
 
@@ -11,12 +13,12 @@ def convert_array_to_string(list_of_items):
 
 
 @book_api.route("/search")
-def book_search():
+def book_search():  # pylint: disable=unused-variable
     """Search for books by a query"""
     # to get the value of query (i.e. ?q=some-value)
     # /search?q=some-value
     query = request.args.get("q")
-    response = requests.get("https://openlibrary.org/search.json?q=" + query)
+    response = requests.get("https://openlibrary.org/search.json?q=" + query, timeout=5)
     data = response.json()
 
     books = []
@@ -60,12 +62,12 @@ def book_search():
 
 
 @book_api.route("/search_by_subject")
-def book_search_by_subject():
+def book_search_by_subject():  # pylint: disable=unused-variable
     """Search for books by subject"""
     # to get the value of query (i.e. ?q=some-value)
     # /search_by_subject?q=some-value
     query = request.args.get("q").lower()
-    response = requests.get("https://openlibrary.org/subjects/" + query + ".json")
+    response = requests.get("https://openlibrary.org/subjects/" + query + ".json", timeout=5)
     data = response.json()
 
     books = []
@@ -88,12 +90,12 @@ def book_search_by_subject():
 
 
 @book_api.route("/search_by_author")
-def book_search_by_author():
+def book_search_by_author():  # pylint: disable=unused-variable
     """Search for books by author"""
     # to get the value of query (i.e. ?q=some-value)
     # /search_by_author?q=some-value
     query = request.args.get("q").lower()
-    response = requests.get("https://openlibrary.org/search.json?author=" + query)
+    response = requests.get("https://openlibrary.org/search.json?author=" + query, timeout=5)
     data = response.json()
 
     books = []
