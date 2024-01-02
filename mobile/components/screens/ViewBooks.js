@@ -11,7 +11,7 @@ export default function ViewBooks() {
 
     const viewBooks = () => {
         setLoading(true)
-        axios.get(SERVER_URL + '/search?q=' + text)
+        axios.get(SERVER_URL + '/api/search?q=' + text)
             .then(function(response) {
                 setBooks(response.data.books)
             })
