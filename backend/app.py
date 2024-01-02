@@ -1,3 +1,5 @@
+"""Main App Program"""
+
 from flask import Flask
 from routes.book_api import book_api
 from routes.test_page import test_page
