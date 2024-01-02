@@ -1,0 +1,9 @@
+name: Back-end
+
+on:
+  pull_request:
+    branches: [ 'main' ]
+  push:
+    branches: [ '*' ]
+
+jobs:
