@@ -11,7 +11,7 @@ export default function ViewBooksByAuthor() {
 
     const viewBooksByAuthor = () => {
         setLoading(true)
-        axios.get(SERVER_URL + '/search_by_author?q=' + text)
+        axios.get(SERVER_URL + '/api/search_by_author?q=' + text)
             .then(function(response) {
                 setBooks(response.data.books)
             })

@@ -1,28 +1,18 @@
-from flask import Flask, request
+from flask import Blueprint, request
 import requests
 
-app = Flask(__name__)
-
-
-@app.route("/")
-def home():
-    html = "<h1>Home Page</h1>\n <p>This is the home page</p>"
-    return html
-
-
-@app.route("/hello")
-def hello_world():
-    data = {"msg": "Request received", "type": "success"}
-    return data
+book_api = Blueprint('book_api', __name__)
 
 
 def convert_array_to_string(list_of_items):
+    """Convert an array to a string"""
     string_list = ",".join(str(x) for x in list_of_items)
     return string_list
 
 
-@app.route("/search")
+@book_api.route("/search")
 def book_search():
+    """Search for books by a query"""
     # to get the value of query (i.e. ?q=some-value)
     # /search?q=some-value
     query = request.args.get("q")
@@ -69,8 +59,9 @@ def book_search():
     return {"books": books}
 
 
-@app.route("/search_by_subject")
+@book_api.route("/search_by_subject")
 def book_search_by_subject():
+    """Search for books by subject"""
     # to get the value of query (i.e. ?q=some-value)
     # /search_by_subject?q=some-value
     query = request.args.get("q").lower()
@@ -96,8 +87,9 @@ def book_search_by_subject():
     return {"books": books}
 
 
-@app.route("/search_by_author")
+@book_api.route("/search_by_author")
 def book_search_by_author():
+    """Search for books by author"""
     # to get the value of query (i.e. ?q=some-value)
     # /search_by_author?q=some-value
     query = request.args.get("q").lower()
