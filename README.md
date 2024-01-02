@@ -1,10 +1,13 @@
 # BookSearch
-A book search mobile app for searching up books.
+[![Frontend Workflow](https://github.com/sagedemage/BookSearch/actions/workflows/mobile_app.yml/badge.svg)](https://github.com/sagedemage/BookSearch/actions/workflows/mobile_app.yml)
+[![Backend Workflow](https://github.com/sagedemage/BookSearch/actions/workflows/backend.yml/badge.svg)](https://github.com/sagedemage/BookSearch/actions/workflows/backend.yml)
 
 ![](./images/book_search_app.webp)
 
-## Mobile App
+## Purpose
+A book search mobile app for searching up books.
 
+## Mobile App
 To run the program using the following commands
 
 Run for Android
@@ -24,7 +27,6 @@ npm run web
 ```
 
 ## Backend Server
-
 Create virtual environment
 ```
 python3 -m venv venv
