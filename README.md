@@ -1,4 +1,8 @@
 # BookSearch
+[![Frontend Workflow](https://github.com/sagedemage/BookSearch/actions/workflows/mobile_app.yml/badge.svg)](https://github.com/sagedemage/BookSearch/actions/workflows/mobile_app.yml)
+[![Backend Workflow](https://github.com/sagedemage/BookSearch/actions/workflows/backend.yml/badge.svg)](https://github.com/sagedemage/BookSearch/actions/workflows/backend.yml)
+
+## About
 A book search mobile app for searching up books.
 
 ![](./images/book_search_app.webp)
