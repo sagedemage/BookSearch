@@ -8,7 +8,6 @@
 A book search mobile app for searching up books.
 
 ## Mobile App
-
 To run the program using the following commands
 
 Run for Android
@@ -28,7 +27,6 @@ npm run web
 ```
 
 ## Backend Server
-
 Create virtual environment
 ```
 python3 -m venv venv
