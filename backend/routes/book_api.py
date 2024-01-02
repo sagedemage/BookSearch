@@ -2,14 +2,9 @@
 
 from flask import Blueprint, request
 import requests
+from helpers import convert_array_to_string
 
 book_api = Blueprint('book_api', __name__)
-
-
-def convert_array_to_string(list_of_items):
-    """Convert an array to a string"""
-    string_list = ",".join(str(x) for x in list_of_items)
-    return string_list
 
 
 @book_api.route("/search")
