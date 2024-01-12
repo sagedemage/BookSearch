@@ -37,7 +37,7 @@ export default function ViewBooksBySubject() {
                     <Text style={{textAlign: 'center', fontWeight: 'bold'}}>Author: </Text>{item.author_name}
                 </Text>
                 <Text>
-                    <Text style={{textAlign: 'center', fontWeight: 'bold'}}>Number of Pages: </Text>{item.first_publish_year}
+                    <Text style={{textAlign: 'center', fontWeight: 'bold'}}>Publish Year: </Text>{item.first_publish_year}
                 </Text>
             </View>
         </View>
