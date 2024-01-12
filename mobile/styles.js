@@ -20,9 +20,9 @@ export const styles = StyleSheet.create({
     },
     row: {
         flexDirection: 'row',
-        borderBottomWidth: 2,
-        borderLeftWidth: 2,
-        borderRightWidth: 2
+        borderWidth: 1,
+        borderColor: 'lightgray',
+        marginBottom: 10
     },
     table: {
         flex: 1,
@@ -45,10 +45,10 @@ export const table_header = function(width) {
     }
 }
 
-export const table_cell = function(width, border_right_width) {
+export const table_cell = function(width, background_color) {
     return {
         width: width,
         padding: 5,
-        borderRightWidth: border_right_width
+        backgroundColor: background_color
     }
 }
