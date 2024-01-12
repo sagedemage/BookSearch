@@ -41,7 +41,7 @@ export default function ViewBooks() {
                     <Text style={{textAlign: 'center', fontWeight: 'bold'}}>Publish Year:</Text> {item.first_publish_year}
                 </Text>
                 <Text>
-                    <Text style={{textAlign: 'center', fontWeight: 'bold'}}># of Pages:</Text> {item.number_of_pages_median}
+                    <Text style={{textAlign: 'center', fontWeight: 'bold'}}>Number of Pages:</Text> {item.number_of_pages_median}
                 </Text>
             </View>
         </View>
