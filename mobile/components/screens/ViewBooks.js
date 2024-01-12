@@ -30,12 +30,8 @@ export default function ViewBooks() {
             </View>
             <View style={table_cell(300)}>
                 <Text style={{fontSize: 16}}>{item.title}</Text>
-                <Text>
-                    <Text style={{color: 'gray', fontSize: 12}}>by {item.author_name}</Text>
-                </Text>
-                <Text>
-                    <Text style={{fontSize: 12}}>Publish Year: {item.first_publish_year}</Text>
-                </Text>
+                <Text style={{color: 'gray', fontSize: 12}}>by {item.author_name}</Text>
+                <Text style={{fontSize: 12}}>Publish Year: {item.first_publish_year}</Text>
                 <Text style={{fontSize: 12}}>Number of Pages: {item.number_of_pages_median}</Text>
             </View>
         </View>
