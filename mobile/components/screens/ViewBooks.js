@@ -32,16 +32,16 @@ export default function ViewBooks() {
             </View>
             <View style={table_cell(300, 2)}>
                 <Text>
-                    <Text style={{textAlign: 'center', fontWeight: 'bold'}}>Title:</Text> {item.title}
+                    <Text style={{textAlign: 'center', fontWeight: 'bold'}}>Title: </Text>{item.title}
                 </Text>
                 <Text>
-                    <Text style={{textAlign: 'center', fontWeight: 'bold'}}>Author:</Text> {item.author_name}
+                    <Text style={{textAlign: 'center', fontWeight: 'bold'}}>Author: </Text>{item.author_name}
                 </Text>
                 <Text>
-                    <Text style={{textAlign: 'center', fontWeight: 'bold'}}>Publish Year:</Text> {item.first_publish_year}
+                    <Text style={{textAlign: 'center', fontWeight: 'bold'}}>Publish Year: </Text>{item.first_publish_year}
                 </Text>
                 <Text>
-                    <Text style={{textAlign: 'center', fontWeight: 'bold'}}>Number of Pages:</Text> {item.number_of_pages_median}
+                    <Text style={{textAlign: 'center', fontWeight: 'bold'}}>Number of Pages: </Text>{item.number_of_pages_median}
                 </Text>
             </View>
         </View>
