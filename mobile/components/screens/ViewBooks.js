@@ -25,8 +25,6 @@ export default function ViewBooks() {
 
     const _renderItem = ({ item }) => (
         <View style={styles.row}>
-            {/* Only 3 or 4 items a time */}
-            {/* source={default_image_url} */}
             <View style={table_cell(100, 2)}>
                 <Image style={styles.book_cover} source={{uri: item.image_url}} alt='book cover image'/>
             </View>
