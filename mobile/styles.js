@@ -29,7 +29,12 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: '5%'
-    }
+    },
+    book_cover: {
+        width: 72,
+        height: 116,
+        backgroundColor: 'gray',
+    },
 });
 
 export const table_header = function(width) {
