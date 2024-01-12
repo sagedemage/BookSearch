@@ -37,14 +37,6 @@ export const styles = StyleSheet.create({
     },
 });
 
-export const table_header = function(width) {
-    return {
-        width: width,
-        padding: 5,
-        backgroundColor: 'black'
-    }
-}
-
 export const table_cell = function(width, background_color) {
     return {
         width: width,

@@ -25,19 +25,13 @@ export default function ViewBooksBySubject() {
 
     const _renderItem = ({ item }) => (
         <View style={styles.row}>
-            <View style={table_cell(100, 2)}>
-                <Image style={styles.book_cover} source={{uri: item.image_url}} alt='book cover image'/>
+            <View style={table_cell(85, "lightgray")}>
+                <Image style={styles.book_cover} source={{ uri: item.image_url }} alt='book cover image' />
             </View>
             <View style={table_cell(300, 2)}>
-                <Text>
-                    <Text style={{textAlign: 'center', fontWeight: 'bold'}}>Title: </Text>{item.title}
-                </Text>
-                <Text>
-                    <Text style={{textAlign: 'center', fontWeight: 'bold'}}>Author: </Text>{item.author_name}
-                </Text>
-                <Text>
-                    <Text style={{textAlign: 'center', fontWeight: 'bold'}}>Publish Year: </Text>{item.first_publish_year}
-                </Text>
+                <Text style={{ fontSize: 16 }}>{item.title}</Text>
+                <Text style={{ color: 'gray', fontSize: 12 }}>by {item.author_name}</Text>
+                <Text style={{ fontSize: 12 }}>Publish Year: {item.first_publish_year}</Text>
             </View>
         </View>
     );
@@ -54,14 +48,6 @@ export default function ViewBooksBySubject() {
                 ></TextInput>
             </View>
             <View style={styles.table}>
-                <View style={styles.row}>
-                    <View style={table_header(100)}>
-                        <Text style={{ textAlign: 'center', color: 'white' }}>Books</Text>
-                    </View>
-                    <View style={table_header(300)}>
-                        <Text style={{ textAlign: 'center', color: 'white' }}>Description</Text>
-                    </View>
-                </View>
                 {isLoading ? (
                     <ActivityIndicator />
                 ) : (
