@@ -29,29 +29,11 @@ def book_search():  # pylint: disable=unused-variable
         if 'first_publish_year' in item:
             book['first_publish_year'] = item['first_publish_year']
 
-        if 'isbn' in item:
-            book['isbn'] = convert_array_to_string(item['isbn'])
-
         if 'cover_edition_key' in item:
             book['image_url'] = 'https://covers.openlibrary.org/b/olid/' + item['cover_edition_key'] + '-S.jpg'
 
-        if 'publisher' in item:
-            book['publisher'] = convert_array_to_string(item['publisher'])
-
-        if 'language' in item:
-            book['language'] = convert_array_to_string(item['language'])
-
         if 'author_name' in item:
             book['author_name'] = convert_array_to_string(item['author_name'])
-
-        if 'subject' in item:
-            book['subject'] = convert_array_to_string(item['subject'])
-
-        if 'id_amazon' in item:
-            book['id_amazon'] = convert_array_to_string(item['id_amazon'])
-
-        if 'id_google' in item:
-            book['id_google'] = convert_array_to_string(item['id_google'])
 
         books.append(book)
 
