@@ -31,7 +31,9 @@ def book_search():  # pylint: disable=unused-variable
 
         if 'isbn' in item:
             book['isbn'] = convert_array_to_string(item['isbn'])
-            book['image_url'] = 'https://covers.openlibrary.org/b/isbn/' + item['isbn'][0] + '-S.jpg'
+
+        if 'cover_edition_key' in item:
+            book['image_url'] = 'https://covers.openlibrary.org/b/olid/' + item['cover_edition_key'] + '-S.jpg'
 
         if 'publisher' in item:
             book['publisher'] = convert_array_to_string(item['publisher'])
