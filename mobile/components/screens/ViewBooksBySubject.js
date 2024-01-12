@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
-import { View, FlatList, Text, TextInput, Button, ActivityIndicator} from 'react-native';
+import { View, FlatList, Text, TextInput, Button, ActivityIndicator, Image } from 'react-native';
 import { styles, table_header, table_cell } from '../../styles';
 import { SERVER_URL } from '../../config';
 
@@ -12,13 +12,13 @@ export default function ViewBooksBySubject() {
     const viewBooksBySubject = () => {
         setLoading(true)
         axios.get(SERVER_URL + '/api/search_by_subject?q=' + text)
-            .then(function(response) {
+            .then(function (response) {
                 setBooks(response.data.books)
             })
-            .catch(function(error) {
+            .catch(function (error) {
                 console.error(error);
             })
-            .finally(function() {
+            .finally(function () {
                 setLoading(false)
             })
     }
@@ -26,14 +26,19 @@ export default function ViewBooksBySubject() {
     const _renderItem = ({ item }) => (
         <View style={styles.row}>
             {/* Only 3 or 4 items a time */}
-            <View style={table_cell(120, 2)}>
-                <Text style={{textAlign: 'center'}}>{item.title}</Text>
+            <View style={table_cell(100, 2)}>
+                <Image style={styles.book_cover} source={{uri: item.image_url}} alt='book cover image'/>
             </View>
-            <View style={table_cell(120, 2)}>
-                <Text style={{textAlign: 'center'}}>{item.author_name}</Text>
-            </View>
-            <View style={table_cell(120, 0)}>
-                <Text style={{textAlign: 'center'}}>{item.first_publish_year}</Text>
+            <View style={table_cell(300, 2)}>
+                <Text>
+                    <Text style={{textAlign: 'center', fontWeight: 'bold'}}>Title:</Text> {item.title}
+                </Text>
+                <Text>
+                    <Text style={{textAlign: 'center', fontWeight: 'bold'}}>Author:</Text> {item.author_name}
+                </Text>
+                <Text>
+                    <Text style={{textAlign: 'center', fontWeight: 'bold'}}>Publish Year:</Text> {item.first_publish_year}
+                </Text>
             </View>
         </View>
     );
@@ -51,14 +56,11 @@ export default function ViewBooksBySubject() {
             </View>
             <View style={styles.table}>
                 <View style={styles.row}>
-                    <View style={table_header(120)}>
-                        <Text style={{textAlign: 'center', color: 'white'}}>Title</Text>
+                    <View style={table_header(100)}>
+                        <Text style={{ textAlign: 'center', color: 'white' }}>Books</Text>
                     </View>
-                    <View style={table_header(120)}>
-                        <Text style={{textAlign: 'center', color: 'white'}}>Author Name</Text>
-                    </View>
-                    <View style={table_header(120)}>
-                        <Text style={{textAlign: 'center', color: 'white'}}>First Publish Year</Text>
+                    <View style={table_header(300)}>
+                        <Text style={{ textAlign: 'center', color: 'white' }}>Description</Text>
                     </View>
                 </View>
                 {isLoading ? (

@@ -79,6 +79,9 @@ def book_search_by_subject():  # pylint: disable=unused-variable
         if 'first_publish_year' in item:
             book['first_publish_year'] = item['first_publish_year']
 
+        if 'cover_edition_key' in item:
+            book['image_url'] = 'https://covers.openlibrary.org/b/olid/' + item['cover_edition_key'] + '-S.jpg'
+
         books.append(book)
 
     return {"books": books}
