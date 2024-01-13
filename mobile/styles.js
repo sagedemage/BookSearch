@@ -37,7 +37,7 @@ export const styles = StyleSheet.create({
     },
 });
 
-export const table_cell = function(width, background_color) {
+export const tableCell = function(width, background_color) {
     return {
         width: width,
         padding: 5,
