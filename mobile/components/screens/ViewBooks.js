@@ -1,9 +1,13 @@
-import { useState } from 'react';
+import { React, useState } from 'react';
 import axios from 'axios';
 import { View, FlatList, Text, TextInput, Button, ActivityIndicator, Image } from 'react-native';
 import { styles, table_cell } from '../../styles';
 import { SERVER_URL } from '../../config';
 
+/**
+ * View Books Screen Component
+ * @returns {React.ReactHTMLElement} Returns the HTML element
+ */
 export default function ViewBooks() {
   const [books, setBooks] = useState([]);
   const [text, setText] = useState('');

@@ -1,3 +1,4 @@
+import React from 'react';
 import ViewBooks from './components/screens/ViewBooks';
 import ViewBooksBySubject from './components/screens/ViewBooksBySubject';
 import ViewBooksByAuthor from './components/screens/ViewBooksByAuthor';
@@ -7,6 +8,10 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const Tab = createBottomTabNavigator();
 
+/**
+ * Main App
+ * @returns {React.ReactHTMLElement} Returns the HTML element
+ */
 export default function App() {
   return (
     <NavigationContainer>
