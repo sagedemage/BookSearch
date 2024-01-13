@@ -12,11 +12,11 @@ export default function ViewBooks() {
   const viewBooks = () => {
     setLoading(true);
     axios.get(SERVER_URL + '/api/search?q=' + text,
-    ).then(function (response) {
+    ).then((response) => {
       setBooks(response.data.books);
-    }).catch(function (error) {
+    }).catch((error) => {
       console.error(error);
-    }).finally(function () {
+    }).finally(() => {
       setLoading(false);
     });
   };
