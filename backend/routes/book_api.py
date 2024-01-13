@@ -30,7 +30,8 @@ def book_search():  # pylint: disable=unused-variable
             book['first_publish_year'] = item['first_publish_year']
 
         if 'cover_edition_key' in item:
-            book['image_url'] = 'https://covers.openlibrary.org/b/olid/' + item['cover_edition_key'] + '-S.jpg'
+            book['image_url'] = ('https://covers.openlibrary.org/b/olid/'
+                                 + item['cover_edition_key'] + '-S.jpg')
 
         if 'author_name' in item:
             book['author_name'] = convert_array_to_string(item['author_name'])
@@ -46,7 +47,8 @@ def book_search_by_subject():  # pylint: disable=unused-variable
     # to get the value of query (i.e. ?q=some-value)
     # /search_by_subject?q=some-value
     query = request.args.get("q").lower()
-    response = get_request("https://openlibrary.org/subjects/" + query + ".json")
+    response = get_request("https://openlibrary.org/subjects/"
+                           + query + ".json")
     data = response.json()
 
     books = []
@@ -64,7 +66,8 @@ def book_search_by_subject():  # pylint: disable=unused-variable
             book['first_publish_year'] = item['first_publish_year']
 
         if 'cover_edition_key' in item:
-            book['image_url'] = 'https://covers.openlibrary.org/b/olid/' + item['cover_edition_key'] + '-S.jpg'
+            book['image_url'] = ('https://covers.openlibrary.org/b/olid/'
+                                 + item['cover_edition_key'] + '-S.jpg')
 
         books.append(book)
 
@@ -77,7 +80,8 @@ def book_search_by_author():  # pylint: disable=unused-variable
     # to get the value of query (i.e. ?q=some-value)
     # /search_by_author?q=some-value
     query = request.args.get("q").lower()
-    response = get_request("https://openlibrary.org/search.json?author=" + query)
+    response = get_request("https://openlibrary.org/search.json?author="
+                           + query)
     data = response.json()
 
     books = []
