@@ -24,13 +24,22 @@ export default function ViewBooks() {
   const _renderItem = ({ item }) => (
     <View style={styles.row}>
       <View style={table_cell(85, 'lightgray')}>
-        <Image style={styles.book_cover} source={{ uri: item.image_url }} alt='book cover image' />
+        <Image
+          style={styles.book_cover}
+          source={{ uri: item.image_url }}
+          alt='book cover image' />
       </View>
       <View style={table_cell(300)}>
         <Text style={{ fontSize: 16 }}>{item.title}</Text>
-        <Text style={{ color: 'gray', fontSize: 12 }}>by {item.author_name}</Text>
-        <Text style={{ fontSize: 12 }}>Publish Year: {item.first_publish_year}</Text>
-        <Text style={{ fontSize: 12 }}>Number of Pages: {item.number_of_pages_median}</Text>
+        <Text style={{ color: 'gray', fontSize: 12 }}>
+          by {item.author_name}
+        </Text>
+        <Text style={{ fontSize: 12 }}>
+          Publish Year: {item.first_publish_year}
+        </Text>
+        <Text style={{ fontSize: 12 }}>
+          Number of Pages: {item.number_of_pages_median}
+        </Text>
       </View>
     </View>
   );
