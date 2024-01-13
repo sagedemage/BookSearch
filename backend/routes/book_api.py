@@ -99,7 +99,8 @@ def book_search_by_author():  # pylint: disable=unused-variable
             book['number_of_pages_median'] = item['number_of_pages_median']
 
         if 'cover_edition_key' in item:
-            book['image_url'] = 'https://covers.openlibrary.org/b/olid/' + item['cover_edition_key'] + '-S.jpg'
+            book['image_url'] = ('https://covers.openlibrary.org/b/olid/'
+                                 + item['cover_edition_key'] + '-S.jpg')
 
         books.append(book)
 
