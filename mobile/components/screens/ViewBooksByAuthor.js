@@ -48,7 +48,7 @@ export default function ViewBooksByAuthor() {
         <TextInput
           style={styles.text_input}
           placeholder="Search Books by Author"
-          onChangeText={newText => setText(newText)}
+          onChangeText={(newText) => setText(newText)}
           defaultValue={text}
         ></TextInput>
       </View>

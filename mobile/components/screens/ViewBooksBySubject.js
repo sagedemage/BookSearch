@@ -48,7 +48,7 @@ export default function ViewBooksBySubject() {
         <TextInput
           style={styles.text_input}
           placeholder="Search Books by Subject"
-          onChangeText={newText => setText(newText)}
+          onChangeText={(newText) => setText(newText)}
           defaultValue={text}
         ></TextInput>
       </View>
