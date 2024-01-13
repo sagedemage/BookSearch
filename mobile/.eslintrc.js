@@ -25,7 +25,6 @@ module.exports = {
   "rules": {
     'eqeqeq': 'error',
     'react/prop-types': 'off',
-    'react/react-in-jsx-scope': 'off',
 
     /*
       Google Style Guide
