@@ -10,16 +10,16 @@ export default function ViewBooksByAuthor() {
   const [isLoading, setLoading] = useState(false);
 
   const viewBooksByAuthor = () => {
-    setLoading(true)
+    setLoading(true);
     axios.get(SERVER_URL + '/api/search_by_author?q=' + text,
     ).then(function (response) {
-      setBooks(response.data.books)
+      setBooks(response.data.books);
     }).catch(function (error) {
       console.error(error);
     }).finally(function () {
-      setLoading(false)
-    })
-  }
+      setLoading(false);
+    });
+  };
 
   const _renderItem = ({ item }) => (
     <View style={styles.row}>
