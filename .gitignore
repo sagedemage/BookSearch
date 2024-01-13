@@ -44,3 +44,6 @@ __pycache__
 # Media
 images/*.png
 images/*.xcf
+
+# Text files
+images/image_size.txt
