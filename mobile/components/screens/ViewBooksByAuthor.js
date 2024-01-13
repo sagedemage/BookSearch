@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { View, FlatList, Text, TextInput, Button, ActivityIndicator, Image } from 'react-native';
-import { styles, table_header, table_cell } from '../../styles';
+import { styles, table_cell } from '../../styles';
 import { SERVER_URL } from '../../config';
 
 export default function ViewBooksByAuthor() {
@@ -25,7 +25,7 @@ export default function ViewBooksByAuthor() {
 
     const _renderItem = ({ item }) => (
         <View style={styles.row}>
-            <View style={table_cell(85, "lightgray")}>
+            <View style={table_cell(85, 'lightgray')}>
                 <Image style={styles.book_cover} source={{ uri: item.image_url }} alt='book cover image' />
             </View>
             <View style={table_cell(300)}>
